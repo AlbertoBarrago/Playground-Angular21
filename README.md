@@ -1,4 +1,4 @@
-# Warehouse Next-Gen
+# Playground Angular 21
 
 Angular 21 Zoneless Warehouse Management Dashboard with NgRx SignalStore.
 
