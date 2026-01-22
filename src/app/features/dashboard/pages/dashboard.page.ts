@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,
   inject,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { InventoryStore } from '@features/inventory/store/inventory.store';
 import { AuthService } from '@core/auth/auth.service';
 
@@ -18,8 +18,18 @@ import { AuthService } from '@core/auth/auth.service';
     <div class="dashboard">
       <header class="dashboard-header">
         <div class="header-content">
-          <h1>Warehouse Next-Gen</h1>
-          <p class="welcome">Welcome back, {{ auth.userName() }}!</p>
+          <div class="header-left">
+            <h1>Angular Playground 21</h1>
+            <p class="welcome">Welcome back, {{ auth.userName() }}!</p>
+          </div>
+          <div class="header-right">
+            <button class="logout-btn" (click)="logout()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+              </svg>
+              Logout
+            </button>
+          </div>
         </div>
       </header>
 
@@ -115,6 +125,14 @@ import { AuthService } from '@core/auth/auth.service';
       background: linear-gradient(135deg, #3b82f6, #1d4ed8);
       color: white;
       
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
       h1 {
         margin: 0 0 8px;
         font-size: 28px;
@@ -125,6 +143,31 @@ import { AuthService } from '@core/auth/auth.service';
         margin: 0;
         opacity: 0.9;
         font-size: 16px;
+      }
+      
+      .logout-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        
+        svg {
+          width: 18px;
+          height: 18px;
+          stroke-width: 2;
+        }
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.25);
+        }
       }
     }
     
@@ -305,6 +348,12 @@ import { AuthService } from '@core/auth/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardPage {
+  private readonly router = inject(Router);
   readonly inventoryStore = inject(InventoryStore);
   readonly auth = inject(AuthService);
+
+  async logout(): Promise<void> {
+    await this.auth.logout();
+    this.router.navigate(['/auth/login']);
+  }
 }

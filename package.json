@@ -4,6 +4,8 @@
   "description": "Angular 21 Zoneless Warehouse Management Dashboard with NgRx SignalStore",
   "scripts": {
     "start": "ng serve",
+    "start:api": "bun run --cwd server dev",
+    "start:all": "bun run start:api & bun run start",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
     "test": "vitest",
@@ -12,7 +14,8 @@
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
     "lint": "ng lint",
-    "serve:ssr": "node dist/warehouse-next-gen/server/server.mjs"
+    "serve:ssr": "node dist/warehouse-next-gen/server/server.mjs",
+    "install:api": "bun install --cwd server"
   },
   "private": true,
   "dependencies": {

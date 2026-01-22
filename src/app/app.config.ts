@@ -7,7 +7,7 @@ import { authInterceptor } from '@core/interceptors/auth.interceptor';
 import { errorInterceptor } from '@core/interceptors/error.interceptor';
 
 /**
- * Application configuration for Warehouse Next-Gen
+ * Application configuration for Angular Playground 21
  * 
  * Key Features:
  * - Zoneless mode: No zone.js, Signal-driven change detection

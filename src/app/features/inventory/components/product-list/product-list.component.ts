@@ -48,7 +48,7 @@ export class ProductListComponent {
   ];
 
   onProductSelect(product: Product): void {
-    this.store.selectProduct(product.id);
+    this.store.setSelectedProduct(product);
     this.productSelect.emit(product);
   }
 }

@@ -12,6 +12,6 @@ export const INVENTORY_ROUTES: Routes = [
       import('./pages/inventory-adjustment.page').then(
         (m) => m.InventoryAdjustmentPage
       ),
-    title: 'Inventory Adjustment | Warehouse Next-Gen',
+    title: 'Inventory Adjustment | Angular Playground 21',
   },
 ];

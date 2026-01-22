@@ -14,8 +14,6 @@ export const authGuard: CanActivateFn = () => {
     return true;
   }
 
-  // For demo purposes, auto-login
-  // In production, redirect to login page
-  authService.login('demo@warehouse.com', 'demo');
-  return true;
+  // Redirect to login page
+  return router.createUrlTree(['/auth/login']);
 };

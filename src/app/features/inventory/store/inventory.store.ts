@@ -237,12 +237,23 @@ export const InventoryStore = signalStore(
     ),
 
     /**
+     * Set selected product directly (no API call)
+     * Use this when you already have the full product data
+     */
+    setSelectedProduct(product: Product): void {
+      patchState(store, {
+        selectedProduct: product,
+        selectedProductLoadingState: 'success',
+      });
+    },
+
+    /**
      * Clear selected product
      */
     clearSelectedProduct(): void {
-      patchState(store, { 
+      patchState(store, {
         selectedProduct: null,
-        selectedProductLoadingState: 'idle' 
+        selectedProductLoadingState: 'idle'
       });
     },
 

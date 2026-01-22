@@ -563,7 +563,8 @@ export class StockAdjustmentFormComponent {
     });
   }
 
-  formatLocation(location: Product['location']): string {
+  formatLocation(location: Product['location'] | undefined): string {
+    if (!location) return 'Unknown';
     return `Zone ${location.zone}, Aisle ${location.aisle}, Rack ${location.rack}, Shelf ${location.shelf}`;
   }
 
