@@ -8,8 +8,10 @@ Angular 21 Zoneless Warehouse Management Dashboard with NgRx SignalStore.
 - NgRx Signals
 - Vitest for unit testing
 - Playwright for E2E testing
+- Fastify 5 API server (in `/server`) using Bun + TypeScript
 
-## Getting Started
+
+## Getting Started FE
 
 ```bash
 # Install dependencies
@@ -23,6 +25,17 @@ bun test
 
 # Run E2E tests
 bun run e2e
+```
+
+## Getting Started BE
+_For more info look the `README.md` inside `/server` folder_.
+
+```bash
+# Move on server folder 
+cd server
+
+# Start the server 
+bun start  
 ```
 
 ## Project Structure
