@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Warehouse-Next-Gen** is a study project designed to explore Angular 21's cutting-edge features, specifically focusing on Zoneless mode and Signal-based reactivity with NgRx SignalStore.
+**Playground Angualar 21** is a study project designed to explore Angular 21's cutting-edge features, specifically focusing on Zoneless mode and Signal-based reactivity with NgRx SignalStore.
 
 ---
 
@@ -18,7 +18,7 @@
 ### 2. Folder Structure (Enterprise Folder-by-Feature)
 
 ```
-warehouse-next-gen/
+playground-angular-21/
 ├── src/
 │   ├── app/
 │   │   ├── core/                    # Singleton services, guards, interceptors
