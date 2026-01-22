@@ -13,13 +13,9 @@ export class ApiService {
   private readonly baseUrl = environment.apiUrl;
 
   get<T>(endpoint: string, params?: Record<string, string | number>): Observable<T> {
-    let httpParams = new HttpParams();
-    
-    if (params) {
-      Object.entries(params).forEach(([key, value]) => {
-        httpParams = httpParams.set(key, String(value));
-      });
-    }
+    const httpParams = params
+        ? new HttpParams({ fromObject: params })
+        : undefined;
 
     return this.http.get<T>(`${this.baseUrl}/${endpoint}`, { params: httpParams });
   }
