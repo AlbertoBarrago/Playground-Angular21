@@ -1,8 +1,8 @@
-# Playground Angualar 21 – Architecture Documentation
+# Playground Angular 21 – Architecture Documentation
 
 ## Project Overview
 
-**Playground Angualar 21** is a study project designed to explore Angular 21's cutting-edge features, specifically focusing on Zoneless mode and Signal-based reactivity with NgRx SignalStore.
+**Playground Angular 21** is a study project designed to explore Angular 21's cutting-edge features, specifically focusing on Zoneless mode and Signal-based reactivity with NgRx SignalStore.
 
 ---
 
