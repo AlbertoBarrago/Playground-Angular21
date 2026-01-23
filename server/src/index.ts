@@ -44,9 +44,6 @@ async function buildApp() {
   await fastify.register(authRoutes, { prefix: '/api/auth' });
   await fastify.register(productRoutes, { prefix: '/api/products' });
 
-  // Legacy endpoint for inventory (same as products, for frontend compatibility)
-  await fastify.register(productRoutes, { prefix: '/api/inventory/products' });
-
   return fastify;
 }
 

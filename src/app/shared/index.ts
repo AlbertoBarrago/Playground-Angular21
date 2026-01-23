@@ -8,3 +8,4 @@ export * from './utils/signal.utils';
 export * from './components/search-input/search-input.component';
 export * from './components/loading-spinner/loading-spinner.component';
 export * from './components/data-table/data-table.component';
+export * from './components/navbar/navbar.component';

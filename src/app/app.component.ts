@@ -1,11 +1,16 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AuthService } from '@core/auth/auth.service';
+import { NavbarComponent } from '@shared/index';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent],
   template: `
+    @if (auth.isAuthenticated()) {
+      <app-navbar />
+    }
     <main class="app-container">
       <router-outlet />
     </main>
@@ -18,4 +23,6 @@ import { RouterOutlet } from '@angular/router';
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  protected readonly auth = inject(AuthService);
+}
