@@ -60,3 +60,12 @@ src/
 | `bun test` | Run unit tests |
 | `bun run test:ui` | Run tests with UI |
 | `bun run e2e` | Run E2E tests |
+
+
+### Server (`/server`)
+
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start Fastify server with watch mode |
+| `bun run start` | Start Fastify server |
+| `bun run typecheck` | TypeScript typecheck (no emit) |

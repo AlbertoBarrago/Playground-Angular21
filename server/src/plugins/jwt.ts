@@ -16,7 +16,7 @@ async function jwtPluginAsync(fastify: FastifyInstance): Promise<void> {
     },
   });
 
-  // Decorate with authentication method
+  // Decorate with an authentication method
   fastify.decorate('authenticate', async function (
     request: FastifyRequest,
     reply: FastifyReply
@@ -41,7 +41,7 @@ export function getUser(request: FastifyRequest): JwtPayload {
   return request.user as JwtPayload;
 }
 
-// Extend FastifyInstance to include authenticate
+// Extend FastifyInstance to include the authenticate method
 declare module 'fastify' {
   interface FastifyInstance {
     authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;

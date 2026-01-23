@@ -1,10 +1,10 @@
 import Fastify from 'fastify';
 import {
   corsPlugin,
+  swaggerPlugin,
   helmetPlugin,
   jwtPlugin,
   rateLimitPlugin,
-  swaggerPlugin,
   sensiblePlugin,
 } from './plugins';
 import { authRoutes, productRoutes } from './routes';
@@ -31,11 +31,11 @@ async function buildApp() {
 
   // Register plugins in order
   await fastify.register(sensiblePlugin);
+  await fastify.register(swaggerPlugin);
   await fastify.register(corsPlugin);
   await fastify.register(helmetPlugin);
   await fastify.register(rateLimitPlugin);
   await fastify.register(jwtPlugin);
-  await fastify.register(swaggerPlugin);
 
   // Health check endpoint
   fastify.get('/health', {

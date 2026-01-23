@@ -1,6 +1,6 @@
 import type { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import { validateCredentials, sanitizeUser, findUserById } from '../data/users.js';
-import type { LoginBody, LoginResponse, ApiResponse, SafeUser, JwtPayload } from '../types/index.js';
+import type { LoginBody, LoginResponse, ApiResponse, SafeUser, JwtPayload } from '../types';
 
 /**
  * Authentication routes
